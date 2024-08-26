@@ -6,64 +6,15 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, View} from 'react-native';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          backgroundColor: 'olive',
-          width: 395,
-          height: 300,
-        }}>
-        <View
-          style={{
-            flexDirection: 'row-reverse',
-            // flexDirection: 'row',
-            backgroundColor: 'dodgerblue',
-            flex: 1,
-            marginLeft: 100,
-            marginRight: 20,
-            marginVertical: 20,
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              backgroundColor: 'green',
-              width: 80,
-              height: 150,
-              marginLeft: 50,
-            }}
-          />
-          <View
-            style={{
-              backgroundColor: 'pink',
-              width: 80,
-              height: 150,
-              marginLeft: 50,
-            }}
-          />
-        </View>
+      <View style={styles.innerContainer}>
+        <View style={styles.flexItem} />
+        <View style={styles.flexItem} />
+        <View style={styles.flexItem} />
       </View>
     </View>
   );
@@ -72,9 +23,20 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightsteelblue',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'lightpink',
+  },
+  innerContainer: {
+    flexDirection: 'row',
+    width: 200,
+    height: 200,
+    justifyContent: 'space-between',
+    gap: '10%', // This is the new gap property
+  },
+  flexItem: {
+    flex: 1,
+    backgroundColor: 'dodgerblue',
   },
 });
 
